@@ -71,7 +71,8 @@ class NewRatherPage extends Component {
                             onChange={this.handleInputChange} />
                         <button
                             onClick={this.handleSubmit}
-                            type='submit'>
+                            type='submit'
+                            disabled={(optionOne === '') || (optionTwo==='')}>
                             Submit
                         </button>
                 </div>

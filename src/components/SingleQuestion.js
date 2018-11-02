@@ -21,12 +21,19 @@ const QForm = styled.form`
 
 `
 class SingleQuestion extends Component {
+    state={errorMessage:''}
     handleSubmit = (id, e) => {
-      	const answer = this.form.answer.value;
-      	const { dispatch } = this.props;
-
-        e.preventDefault();
-        dispatch(handleAddAnswer(id, answer));
+          const answer = this.form.answer.value;
+          const { dispatch } = this.props;
+          console.log(answer);
+        if(answer !== 'optionOne' && answer !== 'optionTwo'){
+            e.preventDefault();
+            this.setState({errorMessage:'please pick an Answer'})
+        }
+        else{
+            e.preventDefault();
+            dispatch(handleAddAnswer(id, answer));
+        }
 
     }
 
@@ -53,6 +60,7 @@ class SingleQuestion extends Component {
                         </div>
                         {!isAnswered ?(
                             <div>
+                            <p style={{color:'red'}}>{this.state.errorMessage}</p>
                             <input type="radio" value='optionOne' name="answer" /> {optionOne.text}<br />
                             <input type="radio" value='optionTwo' name="answer" /> {optionTwo.text}<br />
                         <p>Asked at {formatDate(timestamp)}</p>

@@ -14,8 +14,8 @@ const RatherApp = () =>(
 			<Switch>
 				<Route path='/' exact component={WouldYouRatherDashboard} />
 				<Route path='/questions/:id' component={SingleQuestionPage} />
-				<Route path='/addQuestion' component={NewRatherPage} />
-				<Route path='/userRanks' component={LeaderBoard} />
+				<Route path='/add' component={NewRatherPage} />
+				<Route path='/leaderboard' component={LeaderBoard} />
 				<Route component={PageNotFound} />
 			</Switch>
 		</Fragment>

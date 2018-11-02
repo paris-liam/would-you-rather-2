@@ -61,10 +61,10 @@ function Nav (props) {
 					<NavLink to='/' exact activeClassName='active'>
 							WouldYouRatherDashboard
 					</NavLink>
-					<NavLink to='/addQuestion' activeClassName='active'>
+					<NavLink to='/add' activeClassName='active'>
 							New Question
 					</NavLink>
-					<NavLink to='/userRanks' activeClassName='active'>
+					<NavLink to='/leaderboard' activeClassName='active'>
 						Leaderboard
 					</NavLink>
 			</Links>
